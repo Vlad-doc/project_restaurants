@@ -1,16 +1,17 @@
-import React, { useState } from "react"
+import React from "react"
 import Restaurant from "./restaurant"
+import { useAccordion } from "../custom-hooks/use-accordion"
 
 function RestaurantsList({ restaurants }) {
-  const [openItemId, setOpenItem] = useState()
+  const { isItemOpen, toggleOpenItem } = useAccordion()
   return (
     <div>
       {restaurants.map((restaurant) => (
         <Restaurant
           key={restaurant.id}
           restaurant={restaurant}
-          isOpen={openItemId === restaurant.id}
-          onBtnClick={() => setOpenItem(restaurant.id)}
+          isOpen={isItemOpen(restaurant.id)}
+          onBtnClick={toggleOpenItem(restaurant.id)}
         />
       ))}
     </div>
