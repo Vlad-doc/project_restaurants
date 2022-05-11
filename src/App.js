@@ -1,3 +1,4 @@
+import OrderForm from "./components/order-form"
 import RestaurantsList from "./components/restaurants-list"
 import { restaurants } from "./fixtures"
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <h2>Restaurants list</h2>
       <RestaurantsList restaurants={restaurants} />
+      <OrderForm />
     </div>
   )
 }
