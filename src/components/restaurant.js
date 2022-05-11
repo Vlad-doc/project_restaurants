@@ -1,3 +1,4 @@
+import { Button } from "antd"
 import React from "react"
 
 function Restaurant({ restaurant, isOpen, onBtnClick }) {
@@ -17,7 +18,9 @@ function Restaurant({ restaurant, isOpen, onBtnClick }) {
     <div>
       <h3>{restaurant.name}</h3>
       {body}
-      <button onClick={onBtnClick}>{isOpen ? "close" : "open"}</button>
+      <Button type="primary" onClick={onBtnClick}>
+        {isOpen ? "close" : "open"}
+      </Button>
     </div>
   )
 }
