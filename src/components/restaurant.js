@@ -1,27 +1,31 @@
-import { Button } from "antd"
+import { Avatar, Button, List } from "antd"
 import React from "react"
+import RestaurantMenu from "./restaurant-menu"
+import ReviewList from "./review-list"
 
 function Restaurant({ restaurant, isOpen, onBtnClick }) {
   const body = isOpen && (
-    <>
-      <img
-        src={restaurant.image}
-        alt={restaurant.name}
-        width={64}
-        height={64}
-      />
-      <div>Menu items: {restaurant.menu.length}</div>{" "}
-    </>
+    <div>
+      <RestaurantMenu menu={restaurant.menu} />
+      <ReviewList reviews={restaurant.reviews} />
+    </div>
   )
 
   return (
-    <div>
-      <h3>{restaurant.name}</h3>
+    <List.Item
+      style={{ paddingLeft: "8px" }}
+      actions={[
+        <Button onClick={onBtnClick}>
+          {isOpen ? "Hide menu" : "Show menu"}
+        </Button>,
+      ]}
+    >
+      <List.Item.Meta
+        avatar={<Avatar shape="square" src={restaurant.image} />}
+        title={restaurant.name}
+      />
       {body}
-      <Button type="primary" onClick={onBtnClick}>
-        {isOpen ? "close" : "open"}
-      </Button>
-    </div>
+    </List.Item>
   )
 }
 

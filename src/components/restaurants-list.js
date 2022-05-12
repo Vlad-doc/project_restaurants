@@ -1,10 +1,11 @@
 import React from "react"
 import Restaurant from "./restaurant"
 import accordionDecorator from "../decorators/accordion"
+import { List } from "antd"
 
 function RestaurantsList({ restaurants, isItemOpen, toggleOpenItem }) {
   return (
-    <div>
+    <List>
       {restaurants.map((restaurant) => (
         <Restaurant
           key={restaurant.id}
@@ -13,7 +14,7 @@ function RestaurantsList({ restaurants, isItemOpen, toggleOpenItem }) {
           onBtnClick={toggleOpenItem(restaurant.id)}
         />
       ))}
-    </div>
+    </List>
   )
 }
 
