@@ -1,6 +1,7 @@
 import { Avatar, Button, List } from "antd"
 import React from "react"
 import RestaurantMenu from "./restaurant-menu"
+import RestaurantRate from "./restaurant-rate"
 import ReviewList from "./review-list"
 
 function Restaurant({ restaurant, isOpen, onBtnClick }) {
@@ -24,6 +25,7 @@ function Restaurant({ restaurant, isOpen, onBtnClick }) {
         avatar={<Avatar shape="square" src={restaurant.image} />}
         title={restaurant.name}
       />
+      <RestaurantRate restaurant={restaurant} />
       {body}
     </List.Item>
   )
