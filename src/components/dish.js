@@ -2,7 +2,7 @@ import { MinusOutlined, PlusOutlined } from "@ant-design/icons"
 import { Button, Card } from "antd"
 import React from "react"
 import { connect } from "react-redux"
-import { decrement, increment } from "../ac"
+import { addItem, removeItem } from "../ac"
 
 function Dish(props) {
   return (
@@ -17,13 +17,13 @@ function Dish(props) {
               type="primary"
               shape="circle"
               icon={<MinusOutlined />}
-              onClick={props.handleDecrease}
+              onClick={() => props.handleDecrease(props.id)}
             />
             <Button
               type="primary"
               shape="circle"
               icon={<PlusOutlined />}
-              onClick={props.handleIncease}
+              onClick={() => props.handleIncease(props.id)}
             />
           </Button.Group>
         </>,
@@ -37,13 +37,13 @@ function Dish(props) {
   )
 }
 
-const mapStateToProps = (state) => ({
-  amount: state.count,
+const mapStateToProps = (state, ownProps) => ({
+  amount: state.order[ownProps.id] || 0,
 })
 
 const mapDispatchToprops = {
-  handleDecrease: decrement,
-  handleIncease: increment,
+  handleDecrease: removeItem,
+  handleIncease: addItem,
 }
 
 export default connect(mapStateToProps, mapDispatchToprops)(Dish)
