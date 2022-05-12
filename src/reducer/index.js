@@ -1,8 +1,10 @@
 import { combineReducers } from "redux"
-import counterReducer from "./counter"
 import order from "./order"
+import restaurants from "./restaurants"
+import filters from "./filters"
 
 export default combineReducers({
-  count: counterReducer,
   order,
+  restaurants,
+  filters,
 })

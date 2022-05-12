@@ -1,9 +1,10 @@
 import { Rate } from "antd"
 import React, { Component } from "react"
+import { getAverageRate } from "../utils"
 
 export class RestaurantRate extends Component {
   state = {
-    rate: getDefaultRate(this.props.restaurant),
+    rate: getAverageRate(this.props.restaurant),
   }
   render() {
     return (
@@ -16,10 +17,3 @@ export class RestaurantRate extends Component {
 }
 
 export default RestaurantRate
-
-function getDefaultRate(restaurant) {
-  return restaurant.reviews
-    .map((review) => review.rating)
-    .filter((rate) => typeof rate !== "undefined")
-    .reduce((acc, el, _, arr) => acc + el / arr.length, 0)
-}
