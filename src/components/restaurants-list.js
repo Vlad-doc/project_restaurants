@@ -3,7 +3,7 @@ import Restaurant from "./restaurant"
 import accordionDecorator from "../decorators/accordion"
 import { List } from "antd"
 import { connect } from "react-redux"
-import { getAverageRate } from "../utils"
+import { filtratedRestaurantSelector } from "../selectors"
 
 function RestaurantsList({ restaurants, isItemOpen, toggleOpenItem }) {
   return (
@@ -20,11 +20,6 @@ function RestaurantsList({ restaurants, isItemOpen, toggleOpenItem }) {
   )
 }
 
-export default connect((state) => {
-  const filtratedRestaurants = state.restaurants.filter(
-    (restaurant) => getAverageRate(restaurant) >= state.filters.minRating,
-  )
-  return {
-    restaurants: filtratedRestaurants,
-  }
-})(accordionDecorator(RestaurantsList))
+export default connect((state) => ({
+  restaurants: filtratedRestaurantSelector(state),
+}))(accordionDecorator(RestaurantsList))
