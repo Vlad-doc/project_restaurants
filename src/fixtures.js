@@ -193,7 +193,7 @@ const normalizedRestaurants = [
       lng: -0.13999606534701844,
     },
     image:
-      "https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/14492346_873920782710134_3797018371088115698_n.jpg?_nc_cat=108&_nc_ht=scontent-waw1-1.xx&oh=31de8f2906284981f858f7fdf36b0235&oe=5D6AA774",
+      "https://thumbs.dreamstime.com/z/italian-restaurant-logo-design-authentic-traditional-continental-food-label-vector-illustration-white-background-italian-119566316.jpg",
     menu: [
       "25402233-0095-49ea-9939-1e67ed89ffb9",
       "90902233-0095-49ea-9939-1e67ed89ffb9",
@@ -228,7 +228,7 @@ const normalizedRestaurants = [
       lng: -0.12409270211070839,
     },
     image:
-      "https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/602319_106412009502974_1112399097_n.jpg?_nc_cat=110&_nc_ht=scontent-waw1-1.xx&oh=c23931271965e9edd3921d559f7440ba&oe=5D6CC921",
+      "https://thumbs.dreamstime.com/z/italian-restaurant-logo-design-authentic-traditional-continental-food-label-vector-illustration-white-background-italian-119566316.jpg",
     menu: [
       "6c02c2ce-b868-4191-b4a7-8686429f4bac",
       "99bb6fbb-e53b-4b7e-b9c2-23b63b77385d",
