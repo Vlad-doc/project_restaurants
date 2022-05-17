@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM, SET_MIN_RATING } from "../constants"
+import { ADD_ITEM, ADD_REVIEW, REMOVE_ITEM, SET_MIN_RATING } from "../constants"
 
 export const addItem = (id) => ({
   type: ADD_ITEM,
@@ -13,4 +13,10 @@ export const removeItem = (id) => ({
 export const setMinRating = (minRating) => ({
   type: SET_MIN_RATING,
   payload: { minRating },
+})
+
+export const addReview = (review, restaurantId) => ({
+  type: ADD_REVIEW,
+  payload: { review, restaurantId },
+  generateId: true,
 })

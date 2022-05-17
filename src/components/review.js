@@ -1,5 +1,7 @@
 import { Comment, Rate } from "antd"
 import React from "react"
+import { connect } from "react-redux"
+import { reviewSelector } from "../selectors"
 
 function Review({ review }) {
   return (
@@ -18,4 +20,6 @@ function Review({ review }) {
   )
 }
 
-export default Review
+export default connect((state, ownProps) => ({
+  review: reviewSelector(state, ownProps),
+}))(Review)

@@ -3,7 +3,7 @@ import Restaurant from "./restaurant"
 import accordionDecorator from "../decorators/accordion"
 import { List } from "antd"
 import { connect } from "react-redux"
-import { filtratedRestaurantSelector } from "../selectors"
+import { filtratedRestaurantsSelector } from "../selectors"
 
 function RestaurantsList({ restaurants, isItemOpen, toggleOpenItem }) {
   return (
@@ -21,5 +21,5 @@ function RestaurantsList({ restaurants, isItemOpen, toggleOpenItem }) {
 }
 
 export default connect((state) => ({
-  restaurants: filtratedRestaurantSelector(state),
+  restaurants: filtratedRestaurantsSelector(state),
 }))(accordionDecorator(RestaurantsList))

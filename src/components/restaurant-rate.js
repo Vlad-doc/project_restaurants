@@ -1,19 +1,14 @@
 import { Rate } from "antd"
 import React, { Component } from "react"
-import { getAverageRate } from "../utils"
+import { connect } from "react-redux"
+import { avarageRateSelector } from "../selectors"
 
 export class RestaurantRate extends Component {
-  state = {
-    rate: getAverageRate(this.props.restaurant),
-  }
   render() {
-    return (
-      <Rate
-        value={this.state.value}
-        onChange={(rate) => this.setState({ rate })}
-      />
-    )
+    return <Rate value={this.props.rate} disabled />
   }
 }
 
-export default RestaurantRate
+export default connect((state, ownProps) => ({
+  rate: avarageRateSelector(state, ownProps),
+}))(RestaurantRate)

@@ -8,7 +8,7 @@ function Restaurant({ restaurant, isOpen, onBtnClick }) {
   const body = isOpen && (
     <div>
       <RestaurantMenu menu={restaurant.menu} />
-      <ReviewList reviews={restaurant.reviews} />
+      <ReviewList restaurant={restaurant} />
     </div>
   )
 
