@@ -1,4 +1,10 @@
-import { ADD_ITEM, ADD_REVIEW, REMOVE_ITEM, SET_MIN_RATING } from "../constants"
+import {
+  ADD_ITEM,
+  ADD_REVIEW,
+  LOAD_ALL_RESTAURANTS,
+  REMOVE_ITEM,
+  SET_MIN_RATING,
+} from "../constants"
 
 export const addItem = (id) => ({
   type: ADD_ITEM,
@@ -19,4 +25,9 @@ export const addReview = (review, restaurantId) => ({
   type: ADD_REVIEW,
   payload: { review, restaurantId },
   generateId: true,
+})
+
+export const loadAllRestaurants = () => ({
+  type: LOAD_ALL_RESTAURANTS,
+  callAPI: "/api/restaurants",
 })

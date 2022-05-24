@@ -1,11 +1,20 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Restaurant from "./restaurant"
 import accordionDecorator from "../decorators/accordion"
 import { List } from "antd"
 import { connect } from "react-redux"
 import { filtratedRestaurantsSelector } from "../selectors"
+import { loadAllRestaurants } from "../ac"
 
-function RestaurantsList({ restaurants, isItemOpen, toggleOpenItem }) {
+function RestaurantsList({
+  restaurants,
+  isItemOpen,
+  toggleOpenItem,
+  loadAllRestaurants,
+}) {
+  useEffect(() => {
+    loadAllRestaurants()
+  }, [])
   return (
     <List>
       {restaurants.map((restaurant) => (
@@ -20,6 +29,14 @@ function RestaurantsList({ restaurants, isItemOpen, toggleOpenItem }) {
   )
 }
 
-export default connect((state) => ({
-  restaurants: filtratedRestaurantsSelector(state),
-}))(accordionDecorator(RestaurantsList))
+export default connect(
+  (state) => {
+    console.log("---", "connect")
+    return {
+      restaurants: filtratedRestaurantsSelector(state),
+    }
+  },
+  {
+    loadAllRestaurants,
+  },
+)(accordionDecorator(RestaurantsList))
