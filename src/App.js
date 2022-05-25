@@ -1,7 +1,7 @@
 import Cart from "./components/cart"
 import Filter from "./components/filter"
 import OrderForm from "./components/order-form"
-import RestaurantsList from "./components/restaurants-list"
+import RestaurantsPage from "./components/routes/restaurants"
 import { Route, NavLink } from "react-router-dom"
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <NavLink to="/filter">Filter</NavLink>
 
       <Route path="/filter" component={Filter} />
-      <Route path="/restaurants" component={RestaurantsList} />
+      <Route path="/restaurants" component={RestaurantsPage} />
       <Route path="/checkout" component={OrderForm} />
     </div>
   )
