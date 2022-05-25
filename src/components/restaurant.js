@@ -7,7 +7,7 @@ import ReviewList from "./review-list"
 function Restaurant({ restaurant, isOpen, onBtnClick }) {
   const body = isOpen && (
     <div>
-      <RestaurantMenu menu={restaurant.menu} />
+      <RestaurantMenu restaurant={restaurant} />
       <ReviewList restaurant={restaurant} />
     </div>
   )

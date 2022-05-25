@@ -1,5 +1,4 @@
 import { Record } from "immutable"
-import { normalizedUsers } from "../fixtures"
 import { arrToMap } from "../utils"
 
 const UserRecord = Record({
@@ -8,7 +7,7 @@ const UserRecord = Record({
 })
 
 const ReduceRecord = Record({
-  entities: arrToMap(normalizedUsers, UserRecord),
+  entities: arrToMap([], UserRecord),
 })
 
 export default (usersState = new ReduceRecord(), { type }) => {
