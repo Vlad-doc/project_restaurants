@@ -1,17 +1,18 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Comment, Rate } from "antd"
 import { connect } from "react-redux"
 import { reviewSelector } from "../selectors"
-import { Consumer } from "../contexts/username"
+import { Consumer, userContext } from "../contexts/username"
 
 function Review({ review }) {
+  const username = useContext(userContext)
   return (
     <Comment
       style={{
         margin: "16px",
         backgroundColor: "white",
       }}
-      author={review.user}
+      author={username}
       content={review.text}
       actions={[
         <div>
