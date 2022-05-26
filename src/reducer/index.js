@@ -1,16 +1,19 @@
 import { combineReducers } from "redux"
+import { connectRouter } from "connected-react-router"
 import order from "./order"
-import restaurants from "./restaurants"
 import filters from "./filters"
+import restaurants from "./restaurants"
 import dishes from "./dishes"
-import users from "./users"
 import reviews from "./reviews"
+import users from "./users"
+import history from "../history"
 
 export default combineReducers({
   order,
-  restaurants,
   filters,
+  restaurants,
   dishes,
   users,
   reviews,
+  router: connectRouter(history),
 })

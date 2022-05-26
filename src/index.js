@@ -4,15 +4,16 @@ import App from "./App"
 import "antd/dist/antd.css"
 import { Provider } from "react-redux"
 import store from "./store"
-import { BrowserRouter } from "react-router-dom"
+import { ConnectedRouter } from "connected-react-router"
+import history from "./history"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <Provider store={store}>
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <React.StrictMode>
         <App />
-      </Provider>
-    </React.StrictMode>
-  </BrowserRouter>,
+      </React.StrictMode>
+    </ConnectedRouter>
+  </Provider>,
 )
