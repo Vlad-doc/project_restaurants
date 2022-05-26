@@ -1,6 +1,7 @@
 import { Button, List } from "antd"
 import React from "react"
 import useToggler from "../custom-hooks/use-toggle-open"
+import { Translate } from "../locale/context"
 import Review from "./review"
 import ReviewForm from "./review-form"
 
@@ -23,7 +24,7 @@ function ReviewList({ restaurant }) {
     <div>
       {body}
       <Button onClick={toggleOpen}>
-        {isOpen ? "hide reviews" : "show reviews"}
+        <Translate>{isOpen ? "hide reviews" : "show reviews"}</Translate>
       </Button>
     </div>
   )

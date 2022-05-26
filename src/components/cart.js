@@ -1,11 +1,15 @@
 import React from "react"
 import { connect } from "react-redux"
+import { Translate } from "../locale/context"
 import { totalAmountSelector, totalPriceSelector } from "../selectors"
 
 function Cart({ totalAmount, totalPrice }) {
   return (
     <div>
-      Total {totalAmount} items from {totalPrice}$
+      <Translate>cart-total</Translate>&nbsp;{totalAmount}&nbsp;
+      <Translate>cart-items</Translate>,&nbsp;
+      <Translate>cart-for</Translate>&nbsp;
+      {totalPrice}$
     </div>
   )
 }

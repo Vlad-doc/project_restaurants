@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { connect } from "react-redux"
 import { addReview } from "../ac"
 import { useInputValue } from "../custom-hooks/use-input-value"
+import { Translate } from "../locale/context"
 
 function ReviewForm({ submitReview }) {
   const [text, setText] = useInputValue()
@@ -16,7 +17,7 @@ function ReviewForm({ submitReview }) {
       Text: <Input value={text} onChange={setText} />
       <Rate value={rating} onChange={setRating} />
       <Button type="primary" htmlType="submit">
-        Submit Review
+        <Translate>Submit Review</Translate>
       </Button>
     </form>
   )
